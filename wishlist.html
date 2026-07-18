@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma liste de souhaits — La MontreⓇ</title>
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="site-header" class="site-header"></header>
+
+<div class="page-hero">
+  <div class="wrap" data-reveal="fade">
+    <span class="eyebrow on-dark">Favoris</span>
+    <h1>Ma liste de souhaits</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div id="wishlist-empty" class="empty-cart" style="display:none;">
+      <p>Votre liste de souhaits est vide.</p>
+      <a href="shop.html" class="btn btn-gold">Découvrir la collection</a>
+    </div>
+
+    <div id="wishlist-grid" class="grid"></div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+<script>
+  function renderWishlistPage(){
+    const ids = getWishlist();
+    const items = ids.map(id => findProduct(id)).filter(Boolean);
+    const grid = document.getElementById("wishlist-grid");
+    const empty = document.getElementById("wishlist-empty");
+
+    if (!items.length){
+      grid.style.display = "none";
+      empty.style.display = "block";
+      return;
+    }
+    grid.style.display = "grid";
+    empty.style.display = "none";
+    grid.innerHTML = items.map((p, i) => productCardHTML(p, i)).join("");
+    if (typeof refreshScrollReveal === "function") refreshScrollReveal();
+  }
+
+  document.addEventListener("DOMContentLoaded", renderWishlistPage);
+</script>
+</body>
+</html>

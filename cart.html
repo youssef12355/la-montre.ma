@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon panier — La MontreⓇ</title>
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="site-header" class="site-header"></header>
+
+<div class="page-hero">
+  <div class="wrap" data-reveal="fade">
+    <span class="eyebrow on-dark">Panier</span>
+    <h1>Votre sélection</h1>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+
+    <div id="cart-empty" class="empty-cart" style="display:none;">
+      <p>Votre panier est vide.</p>
+      <a href="shop.html" class="btn btn-gold">Découvrir la collection</a>
+    </div>
+
+    <div id="cart-layout" class="cart-layout">
+      <div>
+        <div id="cart-list"></div>
+      </div>
+      <div>
+        <div id="cart-summary" class="summary-box"></div>
+      </div>
+    </div>
+
+    <div id="checkout-form-wrap" style="margin-top:70px;">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Étape finale</span>
+          <h2 style="font-size:32px;">Vos informations de livraison</h2>
+        </div>
+      </div>
+
+      <form id="checkout-form" style="max-width:640px;">
+        <div class="form-row">
+          <div class="form-group" data-field="name">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom">
+            <span class="form-error">Veuillez entrer votre nom.</span>
+          </div>
+          <div class="form-group" data-field="phone">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" placeholder="06 00 00 00 00">
+            <span class="form-error">Veuillez entrer un numéro valide.</span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group" data-field="address">
+            <label for="address">Adresse</label>
+            <input type="text" id="address" name="address" placeholder="Rue, quartier...">
+            <span class="form-error">Veuillez entrer votre adresse.</span>
+          </div>
+          <div class="form-group" data-field="city">
+            <label for="city">Ville</label>
+            <input type="text" id="city" name="city" placeholder="Ville">
+            <span class="form-error">Veuillez entrer votre ville.</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="notes">Note (optionnel)</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Instructions de livraison, préférence horaire..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">Confirmer la commande via WhatsApp</button>
+        <p style="font-size:12px; color:#8a8574; margin-top:14px; text-align:center;">Vous serez redirigé vers WhatsApp pour envoyer votre commande. Nous vous appellerons pour confirmer avant l'expédition.</p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>

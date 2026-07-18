@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La MontreⓇ — N°1 au Maroc, montres de luxe livrées chez vous</title>
+<meta name="description" content="La MontreⓇ : importation et distribution de montres haut de gamme au Maroc — Rolex, Tissot, Longines, Tag Heuer et plus. Livraison gratuite, paiement à la livraison, garantie 3 ans.">
+<link rel="icon" href="images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/favicon-32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="images/favicon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="site-header" class="site-header"></header>
+
+<section class="video-hero" id="video-hero">
+  <div class="video-hero-slide is-active" data-index="0">
+    <video muted playsinline preload="auto" src="videos/tissot-t-wave-bicolour.mp4"></video>
+    <div class="video-hero-overlay"></div>
+    <div class="video-hero-caption">
+      <span class="eyebrow on-dark">Tissot</span>
+      <h2>T-Wave Bicolour</h2>
+      <a href="shop.html?cat=Tissot" class="btn btn-outline">Découvrir</a>
+    </div>
+  </div>
+  <div class="video-hero-slide" data-index="1">
+    <video muted playsinline preload="auto" src="videos/tissot-gentleman-powermatic80.mp4"></video>
+    <div class="video-hero-overlay"></div>
+    <div class="video-hero-caption">
+      <span class="eyebrow on-dark">Tissot</span>
+      <h2>Gentleman Powermatic 80</h2>
+      <a href="shop.html?cat=Tissot" class="btn btn-outline">Découvrir</a>
+    </div>
+  </div>
+
+  <button class="video-hero-arrow left" id="video-hero-prev" aria-label="Précédent">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+  </button>
+  <button class="video-hero-arrow right" id="video-hero-next" aria-label="Suivant">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </button>
+  <div class="video-hero-dots" id="video-hero-dots"></div>
+</section>
+
+<!-- Homme / Marques / Femme trio banner -->
+<section class="trio-banner" id="trio-banner">
+  <a href="shop.html?gender=Homme" class="trio-panel trio-panel-tall" data-reveal="left">
+    <img id="panel-homme-img" src="images/products/h-rolex-116610-2.jpg" alt="Collection Homme">
+    <div class="trio-panel-content">
+      <h3>Montres Hommes</h3>
+      <span class="btn btn-outline">Voir nos collections</span>
+    </div>
+  </a>
+
+  <div class="trio-panel-stack">
+    <a href="shop.html?cat=Tissot" class="trio-panel trio-panel-half" id="panel-brand-1" data-reveal="fade">
+      <img id="panel-brand-1-img" src="" alt="">
+      <div class="trio-panel-content">
+        <h3 id="panel-brand-1-name">Tissot</h3>
+        <span class="btn btn-outline">Voir les collections</span>
+      </div>
+    </a>
+    <a href="shop.html?cat=Tag+Heuer" class="trio-panel trio-panel-half" id="panel-brand-2" data-reveal="fade" data-reveal-delay="120">
+      <img id="panel-brand-2-img" src="" alt="">
+      <div class="trio-panel-content">
+        <h3 id="panel-brand-2-name">Tag Heuer</h3>
+        <span class="btn btn-outline">Voir les collections</span>
+      </div>
+    </a>
+  </div>
+
+  <a href="shop.html?gender=Femme" class="trio-panel trio-panel-tall" data-reveal="right">
+    <img id="panel-femme-img" src="images/banners/banner-women.jpg" alt="Collection Femme">
+    <div class="trio-panel-content">
+      <h3>Montres Femme</h3>
+      <span class="btn btn-outline">Voir nos collections</span>
+    </div>
+  </a>
+</section>
+
+<!-- Brand marquee -->
+<div class="marquee">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+
+<section class="section-dark" style="padding-top:56px; padding-bottom:56px;">
+  <div class="wrap">
+    <div class="cat-strip-wrap at-start" id="cat-strip-wrap">
+      <button class="cat-scroll-btn left" onclick="scrollCatStrip(-1)" aria-label="Précédent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="cat-strip" id="cat-strip"></div>
+      <button class="cat-scroll-btn right" onclick="scrollCatStrip(1)" aria-label="Suivant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <div class="trending-head" data-reveal="fade">
+      <span class="eyebrow">Nouvelle collection</span>
+      <h2>Articles Les <strong>Plus Tendances</strong></h2>
+    </div>
+    <div class="grid trending-grid" id="featured-grid"></div>
+    <div style="text-align:center; margin-top:36px;">
+      <a href="shop.html" class="btn btn-dark">Toute la collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- Catégories -->
+<section class="categories-section">
+  <div class="wrap">
+    <div class="section-head-center" data-reveal="fade">
+      <span class="eyebrow">La série pour homme et femme</span>
+      <h2 class="mixed-heading-gold">Catégories</h2>
+    </div>
+
+    <div class="cat-block" data-reveal="fade">
+      <div class="cat-block-head">
+        <span class="eyebrow">Pour elle</span>
+        <h3>Femme</h3>
+      </div>
+      <div class="cat-tiles" id="cat-tiles-femme"></div>
+    </div>
+
+    <div class="cat-block" data-reveal="fade">
+      <div class="cat-block-head">
+        <span class="eyebrow">Pour lui</span>
+        <h3>Homme</h3>
+      </div>
+      <div class="cat-tiles" id="cat-tiles-homme"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Nos Marques -->
+<section class="section-dark brands-section">
+  <div class="wrap">
+    <div class="section-head-center" data-reveal="fade">
+      <span class="eyebrow on-dark">Une variété de +600 collections</span>
+      <h2 class="mixed-heading-light">Nos <strong>Marques</strong></h2>
+      <p class="brands-sub">Ce sont les meilleures marques. Jetez un coup d'œil.</p>
+    </div>
+    <div class="brands-carousel">
+      <div class="brands-page" id="brands-page"></div>
+    </div>
+    <div class="brands-dots" id="brands-dots"></div>
+  </div>
+</section>
+
+<!-- E-boutique La Montre — services -->
+<section class="services-section">
+  <div class="wrap">
+    <div class="section-head-center" data-reveal="fade">
+      <span class="eyebrow">Nos services exclusifs</span>
+      <h2 class="mixed-heading-gold">E-boutique <strong>La montre</strong></h2>
+      <p class="brands-sub">Shopper en toute sécurité grâce à l'identification de la société et la vraie garantie de 3 ans avec cachet de la société V-T-S (exclusive chez la Montre).</p>
+    </div>
+    <div class="services-row" data-reveal="fade">
+      <div class="service-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 10v10M7 10 3 9v10l4 1M7 10l6-6 2 2-3 3h7a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-1"/></svg>
+        <div><strong>Notre exclusivité</strong><span>3 ans de vraie garantie</span></div>
+      </div>
+      <div class="service-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="7" width="15" height="13" rx="1"/><path d="M16 10h3l3 3v4h-6"/><circle cx="5.5" cy="20" r="1.5"/><circle cx="17.5" cy="20" r="1.5"/></svg>
+        <div><strong>Livraison gratuite</strong><span>Sans minimum de commande</span></div>
+      </div>
+      <div class="service-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+        <div><strong>Retours faciles</strong><span>14 jours pour changer d'avis</span></div>
+      </div>
+      <div class="service-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 6H9.5a2.5 2.5 0 0 0 0 5h5a2.5 2.5 0 0 1 0 5H7"/></svg>
+        <div><strong>Remboursement de la différence</strong><span>Meilleurs prix garantis</span></div>
+      </div>
+      <div class="service-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 9V7a4 4 0 0 0-8 0v2"/><rect x="4" y="9" width="16" height="12" rx="2"/></svg>
+        <div><strong>Paiement par PayPal</strong><span>1er site au Maroc à proposer PayPal</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spéciale Édition — Rolex spotlight carousel -->
+<section id="special-edition" class="special-edition">
+  <div class="wrap">
+    <div class="se-heading" data-reveal="fade">
+      <span class="eyebrow">Laissez vous inspirer</span>
+      <h2><span class="se-heading-gold">Spéciale</span> Édition</h2>
+    </div>
+    <div class="se-carousel">
+      <button class="se-arrow left" onclick="seGoTo(-1)" aria-label="Précédent">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div id="se-content" data-reveal="scale"></div>
+      <button class="se-arrow right" onclick="seGoTo(1)" aria-label="Suivant">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<section class="section-dark">
+  <div class="wrap stagger" style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px; text-align:center;">
+    <div>
+      <div class="eyebrow on-dark" style="margin-bottom:14px;">01 — Livraison</div>
+      <p style="color:rgba(242,237,225,.75); line-height:1.7;">Livraison gratuite partout au Maroc, généralement sous 2 à 5 jours ouvrés.</p>
+    </div>
+    <div>
+      <div class="eyebrow on-dark" style="margin-bottom:14px;">02 — Paiement</div>
+      <p style="color:rgba(242,237,225,.75); line-height:1.7;">Payez en espèces à la réception. Aucune carte, aucun risque en ligne.</p>
+    </div>
+    <div>
+      <div class="eyebrow on-dark" style="margin-bottom:14px;">03 — Garantie</div>
+      <p style="color:rgba(242,237,225,.75); line-height:1.7;">Garantie de 3 ans avec cachet de la société (V-T-S), exclusivité La MontreⓇ.</p>
+    </div>
+  </div>
+</section>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/special-edition.js"></script>
+<script>
+  // Video hero carousel — autoplays each slide, advances to the next when it ends,
+  // with a smooth crossfade. Arrows allow manual navigation.
+  (function(){
+    const hero = document.getElementById("video-hero");
+    const slides = [...hero.querySelectorAll(".video-hero-slide")];
+    const dotsWrap = document.getElementById("video-hero-dots");
+    let current = 0;
+
+    dotsWrap.innerHTML = slides.map((_, i) => `<button class="video-hero-dot ${i===0?"is-active":""}" data-dot="${i}" aria-label="Aller à la vidéo ${i+1}"></button>`).join("");
+    const dots = [...dotsWrap.querySelectorAll(".video-hero-dot")];
+
+    function goTo(index){
+      const next = (index + slides.length) % slides.length;
+      if (next === current) return;
+      const currentVideo = slides[current].querySelector("video");
+      const nextVideo = slides[next].querySelector("video");
+
+      slides[current].classList.remove("is-active");
+      dots[current].classList.remove("is-active");
+      slides[next].classList.add("is-active");
+      dots[next].classList.add("is-active");
+
+      currentVideo.pause();
+      nextVideo.currentTime = 0;
+      nextVideo.play().catch(() => {});
+      current = next;
+    }
+
+    slides.forEach((slide, i) => {
+      const video = slide.querySelector("video");
+      video.addEventListener("ended", () => goTo(current + 1));
+    });
+    dots.forEach(dot => dot.addEventListener("click", () => goTo(Number(dot.dataset.dot))));
+    document.getElementById("video-hero-prev").addEventListener("click", () => goTo(current - 1));
+    document.getElementById("video-hero-next").addEventListener("click", () => goTo(current + 1));
+
+    // Kick off autoplay on the first slide (muted autoplay is allowed by all browsers)
+    const firstVideo = slides[0].querySelector("video");
+    firstVideo.play().catch(() => {
+      // If autoplay is blocked for any reason, start on first user interaction
+      const resume = () => { firstVideo.play(); document.removeEventListener("click", resume); };
+      document.addEventListener("click", resume, { once: true });
+    });
+  })();
+
+  // Gender showcase images — both Homme and Femme use fixed images set directly in HTML.
+
+  // Brand panels — prefer Tissot/Tag Heuer if present, else fall back to the two best-stocked brands
+  const brandCounts = {};
+  PRODUCTS.forEach(p => { brandCounts[p.category] = (brandCounts[p.category] || 0) + 1; });
+  const rankedBrands = Object.keys(brandCounts).sort((a,b) => brandCounts[b] - brandCounts[a]);
+  const preferred = ["Tissot", "Tag Heuer"].filter(b => brandCounts[b]);
+  const brandPicks = [...preferred, ...rankedBrands.filter(b => !preferred.includes(b))].slice(0, 2);
+
+  brandPicks.forEach((brand, i) => {
+    const n = i + 1;
+    const prod = PRODUCTS.find(p => p.category === brand && p.featured) || PRODUCTS.find(p => p.category === brand);
+    const link = document.getElementById(`panel-brand-${n}`);
+    const nameEl = document.getElementById(`panel-brand-${n}-name`);
+    const imgEl = document.getElementById(`panel-brand-${n}-img`);
+    if (link) link.href = `shop.html?cat=${encodeURIComponent(brand)}`;
+    if (nameEl) nameEl.textContent = brand;
+    if (imgEl && prod) imgEl.src = prod.image;
+  });
+
+  // Brand marquee (duplicated once for a seamless loop)
+  const brands = getCategories();
+  const marqueeHTML = brands.map(b => `<span>${b}</span>`).join("");
+  document.getElementById("marquee-track").innerHTML = marqueeHTML + marqueeHTML;
+
+  // Category pills
+  const catStrip = document.getElementById("cat-strip");
+  const catStripWrap = document.getElementById("cat-strip-wrap");
+  const cats = ["all", ...getCategories()];
+  catStrip.innerHTML = cats.map(c =>
+    `<a href="shop.html${c === "all" ? "" : "?cat=" + encodeURIComponent(c)}" class="cat-pill">${c === "all" ? "Tout voir" : c}</a>`
+  ).join("");
+
+  function scrollCatStrip(dir){
+    catStrip.scrollBy({ left: dir * 260, behavior: "smooth" });
+  }
+  function updateCatStripEdges(){
+    const atStart = catStrip.scrollLeft <= 2;
+    const atEnd = catStrip.scrollLeft + catStrip.clientWidth >= catStrip.scrollWidth - 2;
+    catStripWrap.classList.toggle("at-start", atStart);
+    catStripWrap.classList.toggle("at-end", atEnd);
+  }
+  catStrip.addEventListener("scroll", updateCatStripEdges);
+  window.addEventListener("resize", updateCatStripEdges);
+  updateCatStripEdges();
+
+  // Featured products
+  // "Articles Les Plus Tendances" — a fuller list, not just the handful marked featured.
+  // Featured items lead, then backfilled with other in-stock products so the section always shows a real list.
+  const featuredFirst = PRODUCTS.filter(p => p.featured);
+  const rest = PRODUCTS.filter(p => !p.featured && p.stock > 0);
+  const featuredPicks = [...featuredFirst, ...rest].slice(0, 12);
+  document.getElementById("featured-grid").innerHTML =
+    featuredPicks.map((p, i) => trendingCardHTML(p, i)).join("");
+
+  // Catégories — Pour Elle / Pour Lui style tiles (Classic / Sport / Smart are display
+  // labels only, since the catalog doesn't track a style attribute per watch; all three
+  // tiles link to the same gender-filtered shop page using different real product photos).
+  function buildCatTiles(gender, targetId, images){
+    const labels = ["Classic", "Sport", "Smart"];
+    document.getElementById(targetId).innerHTML = images.map((src, i) => `
+      <a href="shop.html?gender=${encodeURIComponent(gender)}" class="cat-tile" data-reveal="fade" data-reveal-delay="${i*80}">
+        <img src="${src}" alt="${gender} ${labels[i]}" loading="lazy">
+        <div class="cat-tile-label"><span>Montre</span>${labels[i]}</div>
+      </a>
+    `).join("");
+  }
+  buildCatTiles("Femme", "cat-tiles-femme", [
+    "images/categories/femme-classic.jpg",
+    "images/categories/femme-sport.jpg",
+    "images/categories/femme-smart.jpg"
+  ]);
+  buildCatTiles("Homme", "cat-tiles-homme", [
+    "images/categories/homme-classic.jpg",
+    "images/categories/homme-sport.jpg",
+    "images/categories/homme-smart.jpg"
+  ]);
+
+  // Nos Marques — paginated brand carousel. Uses real logo files where provided
+  // (images/brands/), falls back to a styled text logotype otherwise.
+  (function(){
+    const BRAND_LOGO_IMG = {
+      "Tissot": "images/brands/tissot.png",
+      "Michael Kors": "images/brands/michael-kors.png",
+      "Guess": "images/brands/guess.png",
+      "GC": "images/brands/gc.png",
+      "Guess Collection": "images/brands/gc.png",
+      "Calvin Klein": "images/brands/calvin-klein.png",
+      "Hugo Boss": "images/brands/hugo-boss.png",
+      "Versace": "images/brands/versace.png",
+      "Tag Heuer": "images/brands/tag-heuer.png",
+      "Longines": "images/brands/longines.png",
+      "Rolex": "images/brands/rolex.png",
+      "Tommy Hilfiger": "images/brands/tommy-hilfiger.png",
+      "Breitling": "images/brands/breitling.png",
+      "Raymond Weil": "images/brands/raymond-weil.png",
+      "Emporio Armani": "images/brands/emporio-armani.png",
+      "Burberry": "images/brands/burberry.png",
+      "US Polo Assn.": "images/brands/us-polo.png",
+      "Daniel Wellington": "images/brands/daniel-wellington.png",
+      "Festina": "images/brands/festina.png"
+    };
+
+    // Brands not currently in the catalog (shown for brand recognition only —
+    // they link to Contact since there's no matching product list to filter to yet).
+    const DECORATIVE_ONLY = ["Burberry", "US Polo Assn.", "Daniel Wellington", "Festina"];
+
+    // Frédérique Constant removed from this display per request (no logo supplied);
+    // the product itself is untouched and still reachable via search/shop.
+    const brands = [...getCategories().filter(b => b !== "Frédérique Constant"), ...DECORATIVE_ONLY].sort();
+
+    const perPage = 6;
+    const pages = [];
+    for (let i = 0; i < brands.length; i += perPage) pages.push(brands.slice(i, i + perPage));
+    let pageIndex = 0;
+
+    const pageEl = document.getElementById("brands-page");
+    const dotsEl = document.getElementById("brands-dots");
+    dotsEl.innerHTML = pages.map((_, i) => `<button class="brands-dot ${i===0?"is-active":""}" data-page="${i}"></button>`).join("");
+    const dots = [...dotsEl.querySelectorAll(".brands-dot")];
+
+    function renderPage(){
+      pageEl.innerHTML = pages[pageIndex].map(b => {
+        const logo = BRAND_LOGO_IMG[b];
+        const href = DECORATIVE_ONLY.includes(b) ? "contact.html" : `shop.html?cat=${encodeURIComponent(b)}`;
+        return logo
+          ? `<a href="${href}" class="brand-logo-chip" title="${b}"><img src="${logo}" alt="${b}" loading="lazy"></a>`
+          : `<a href="${href}" class="brand-logo logo-minimal">${b}</a>`;
+      }).join("");
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === pageIndex));
+    }
+    renderPage();
+    dots.forEach(dot => dot.addEventListener("click", () => { pageIndex = Number(dot.dataset.page); renderPage(); }));
+
+    if (pages.length > 1){
+      setInterval(() => {
+        pageIndex = (pageIndex + 1) % pages.length;
+        renderPage();
+      }, 4000);
+    }
+  })();
+
+  if (typeof refreshScrollReveal === "function") refreshScrollReveal();
+</script>
+</body>
+</html>
