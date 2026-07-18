@@ -123,20 +123,25 @@ input, select, textarea{ font-family:inherit; }
 .mega-image img{ width:100%; height:100%; object-fit:cover; transition: transform .4s ease; }
 .mega-image:hover img{ transform: scale(1.08); }
 
-.header-actions{ display:flex; align-items:center; gap:22px; }
+.header-actions{ display:flex; align-items:center; gap:6px; }
 .icon-btn{
   position:relative; background:none; border:none; color: var(--ivory);
   display:flex; align-items:center; justify-content:center;
+  width:44px; height:44px;
 }
 .icon-btn svg{ width:22px; height:22px; }
 .cart-count{
-  position:absolute; top:-8px; right:-10px;
+  position:absolute; top:2px; right:2px;
   background: var(--gold); color: var(--black);
   font-family: var(--font-mono); font-size: 10px; font-weight:600;
   width:18px; height:18px; border-radius:50%;
   display:flex; align-items:center; justify-content:center;
 }
-.nav-toggle{ display:none; background:none; border:none; color:var(--ivory); }
+.nav-toggle{
+  display:none; background:none; border:none; color:var(--ivory);
+  width:44px; height:44px; align-items:center; justify-content:center;
+}
+.nav-toggle svg{ width:24px; height:24px; }
 
 @media (max-width: 900px){
   .main-nav{
@@ -145,7 +150,7 @@ input, select, textarea{ font-family:inherit; }
     gap: 4px; transform: translateX(100%); transition: transform .35s ease;
   }
   .main-nav.open{ transform: translateX(0); }
-  .nav-toggle{ display:block; }
+  .nav-toggle{ display:flex; }
   .nav-item{ height:auto; flex-direction:column; align-items:stretch; border-bottom:1px solid var(--line-soft); }
   .main-nav a{ padding: 16px 4px; }
   .mega-menu{
@@ -1054,3 +1059,55 @@ body{ animation: page-fade-in .5s ease; }
 .info-block svg{ width:22px; height:22px; color:var(--gold); flex-shrink:0; }
 .info-block h4{ margin:0 0 6px; font-family: var(--font-body); font-weight:500; }
 .info-block p{ margin:0; color:#5a5647; font-size:14px; line-height:1.6; }
+
+/* ==========================================================================
+   MOBILE POLISH — consolidated pass for phone-sized screens.
+   Tighter section spacing (desktop paddings were generous but waste a lot
+   of scroll distance on a phone) and larger, more comfortable tap targets
+   throughout, aiming for the ~44px minimum touch target recommendation.
+   ========================================================================== */
+@media (max-width: 640px){
+  /* Generous desktop section padding → tighter on phones */
+  .categories-section,
+  .brands-section,
+  .services-section,
+  .special-edition,
+  section{ padding-top: 56px; padding-bottom: 56px; }
+  .about-hero{ padding: 64px 0; }
+  .page-hero{ padding: 48px 0; }
+
+  /* Toolbar controls — bigger tap targets, stack more comfortably */
+  .filters select, .search-box input, .price-range input{
+    min-height: 44px;
+  }
+  .gender-toggle button{ min-height: 44px; padding: 11px 16px; }
+  .toolbar{ gap: 12px; }
+
+  /* Buttons — comfortable thumb-sized targets everywhere */
+  .btn{ min-height: 46px; }
+  .qty-control button{ min-width: 40px; min-height: 40px; }
+  .social-circle, .share-row a, .copy-link-btn{ width:40px; height:40px; }
+
+  /* Product page — thumbnails and gallery breathe a bit more on small screens */
+  .thumb-item{ width: 64px; height: 64px; }
+
+  /* Cards — slightly tighter padding so more fits without feeling cramped */
+  .card-body{ padding: 16px 16px 18px; gap: 6px; }
+
+  /* WhatsApp FAB — keep clear of the mobile sticky buy bar and thumb reach */
+  .wa-fab{ width: 50px; height: 50px; }
+  .wa-fab svg{ width: 24px; height: 24px; }
+
+  /* Footer badges / contact list — comfortable single column, larger tap area */
+  .footer-badges{ flex-wrap: wrap; justify-content:center; }
+  .badge-rolex, .badge-clock{ min-height: 44px; }
+
+  /* Hero and section headings scale down a touch more aggressively than clamp() alone */
+  .video-hero-caption h2{ font-size: 24px; }
+  .trending-head h2, .se-heading h2{ font-size: 26px; }
+}
+
+@media (max-width: 400px){
+  .wrap{ padding: 0 18px; }
+  .video-hero-caption .btn{ width: 100%; }
+}
